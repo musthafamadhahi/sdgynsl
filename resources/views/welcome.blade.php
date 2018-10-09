@@ -1,9 +1,4 @@
-<!doctype html>
-<html>
-    <head>
-
-    </head>
-    <body>
-
-    </body>
-</html>
+@extends('layouts.master')
+@section('title')
+    Welcome
+    @endsection
