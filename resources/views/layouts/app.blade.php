@@ -71,6 +71,14 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <nav class="nav">
+                <a class="nav-link active" href="#">About Us</a>
+                <a class="nav-link" href="#">Events</a>
+                <a class="nav-link" href="#">Our Projects</a>
+                <a class="nav-link" href="#">For Members</a>
+            </nav>
+        </div>
 
         <main class="py-4">
             @yield('content')
