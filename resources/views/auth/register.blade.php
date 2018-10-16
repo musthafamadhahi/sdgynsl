@@ -68,6 +68,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="contact_no" class="col-md-4 col-form-label text-md-right">{{ __('Contact No') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="contact_no" type="email" class="form-control{{ $errors->has('contact_no') ? ' is-invalid' : '' }}" name="contact_no" value="{{ old('contact_no') }}" required>
+
+                                @if ($errors->has('contact_no'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('contact_no') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
