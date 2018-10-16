@@ -28,6 +28,32 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="district" class="col-md-4 col-form-label text-md-right">{{ __('District') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control{{ $errors->has('district') ? ' is-invalid' : '' }}" name="name" value="{{ old('district') }}" required autofocus>
+
+                                @if ($errors->has('district'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('district') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="division" class="col-md-4 col-form-label text-md-right">{{ __('Division') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="division" type="text" class="form-control{{ $errors->has('division') ? ' is-invalid' : '' }}" name="division" value="{{ old('division') }}" required autofocus>
+
+                                @if ($errors->has('division'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('division') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
