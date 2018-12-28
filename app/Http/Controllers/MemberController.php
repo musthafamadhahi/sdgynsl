@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use DB;
 
-class HomeController extends Controller
+class MemberController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,8 +23,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showall()
     {
-        return view('login.home');
+        $res = user::all();
+
+        return view('login.allmembers')->with('res', $res);
+
     }
 }

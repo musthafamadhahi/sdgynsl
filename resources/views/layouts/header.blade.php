@@ -95,6 +95,7 @@
                                     <li><a href="masonry-grid-portfolio.html">Masonry Grid Style</a></li>
                                 </ul>
                             </li>
+
                             <li><a href="#">CONTACT US</a>
                                 <ul class="dropdown">
                                     <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
