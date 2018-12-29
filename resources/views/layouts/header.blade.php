@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <title>SDG YN SL</title>
+    <title>SDGYNSL</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -69,40 +69,12 @@
                             <li><a href="#">ABOUT US</a>
                                 <ul class="dropdown">
                                     <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="team-members.html">Team Members</a></li>
-                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">PROJECTS</a></li>
+                            <li><a href="#">ACHIEVEMENTS</a></li>
 
-
-                                </ul>
-                            </li>
-                            <li><a href="#">OUR GOALS</a>
-                                <ul class="dropdown">
-                                    <li><a href="digital-download.html">Products Page</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="account.html">Account Page</a></li>
-                                    <li><a href="support.html">Support Center</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">COMPETITION</a>
-                                <ul class="dropdown">
-                                    <li><a href="single-portfolio-1.html">Single Portfolio 1</a></li>
-                                    <li><a href="single-portfolio-2.html">Single Portfolio 2</a></li>
-                                    <li><a href="portfolio-2.html">Portfolio (2 Columns)</a></li>
-                                    <li><a href="portfolio-3.html">Portfolio (3 Columns)</a></li>
-                                    <li><a href="gallery-portfolio.html">Gallery</a></li>
-                                    <li><a href="masonry-grid-portfolio.html">Masonry Grid Style</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="#">CONTACT US</a>
-                                <ul class="dropdown">
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="single-with-sidebar.html">Single with Sidebar</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="#">CONTACT US</a></li>
 
                             <!-- Authentication Links -->
                             @guest

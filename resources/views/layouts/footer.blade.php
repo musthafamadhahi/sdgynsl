@@ -1,27 +1,12 @@
 <footer class="footer">
     <div class="container">
-        <div class="widget col-lg-3 col-md-3 col-sm-12">
+        <div class="widget col-lg- col-md-3 col-sm-12">
             <h4 class="title">About us</h4>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s..</p>
             <a class="button small" href="#">read more</a>
         </div>
         <!-- end widget -->
-        <div class="widget col-lg-3 col-md-3 col-sm-12">
-            <h4 class="title">Recent Posts</h4>
-            <ul class="recent_posts">
-                <li>
-                    <a href="home1.html#">
-                        <img src="assets/img/recent_post_01.png" alt="" />Our New Dashboard Is Here</a>
-                    <a class="readmore" href="#">read more</a>
-                </li>
-                <li>
-                    <a href="home1.html#">
-                        <img src="assets/img/recent_post_02.png" alt="" />Design Is In The Air</a>
-                    <a class="readmore" href="#">read more</a>
-                </li>
-            </ul>
-            <!-- recent posts -->
-        </div>
+
         <!-- end widget -->
         <div class="widget col-lg-3 col-md-3 col-sm-12">
             <h4 class="title">Get In Touch</h4>
