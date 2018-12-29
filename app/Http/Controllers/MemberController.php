@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use App\User;
 use DB;
@@ -25,7 +25,10 @@ class MemberController extends Controller
      */
     public function showall()
     {
-        $res = user::all();
+        $district=Auth::User()->district;
+        $res = user::all()->where('district', $district)->first();
+
+
 
         return view('login.allmembers')->with('res', $res);
 

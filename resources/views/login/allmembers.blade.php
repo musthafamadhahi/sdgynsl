@@ -1,49 +1,49 @@
-@include('login.home')
-
+@include('login.loginheader')
+<br>
+<div class="container">
 <table class="table">
+    <form action="#" method="post">
     <thead>
     <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">District</th>
         <th scope="col">Division</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col" ><input type="submit"name="change" >Change Role</th>
     </tr>
     </thead>
 @if(count($res) > 0)
-    <div class="container">
+
         <div class="row justify-content-center">
 
     <tbody>
+    @foreach($res as $r)
     <tr>
+
+            <div class="card">
+                <div class="card-body">
         <th scope="row">{{$r->id}}</th>
         <td>{{$r->name}}</td>
-        <td>{{$r->distirct}}</td>
+        <td>{{$r->district}}</td>
         <td>{{$r->division}}</td>
         <td>{{$r->email}}</td>
-        <td>{{$r->role}}</td>
-    </tr>
+        <td>{{$r->role}}@if (isset($_POST['change']))
+                            <input type="checkbox">@endif
+        </td>
 
+    </div>
+            </div>
+    </tr>
+    @endforeach
     </tbody>
         </div>
-    </div>
+    </form>
 </table>
+</div>
 
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                @foreach($res as $r)
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>{{$r->name}}</h3><br>
-                            <p>{{$r->division}}</p><br>
-
-                        </div>
-                    </div><br><br>
-                @endforeach
-            </div>
-        </div>
-    </div>
 @else
     <h3>No Members Yet</h3>
 @endif
