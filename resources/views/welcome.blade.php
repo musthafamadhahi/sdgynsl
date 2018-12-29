@@ -10,8 +10,9 @@
     <div class="container">
         <div class="ror">
             <div class="col-md-8 col-md-offset-2">
-                <h1>A Bootstrap Template designed for all your business needs.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                <h1>Sustainable Development Goals Youth Network Sri Lanka</h1>
+                <p>Organizing,Empowering,Linking,Training, Networking and involving youth in a processes towards archiving 'Sustainable Development Goals" declared by the UN
+                    categories</p>
             </div>
         </div>
     </div>
