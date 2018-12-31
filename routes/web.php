@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/allmembers', 'MemberController@showall')->name('home');
+Route::get('/members_view', 'MembersViewController@index');
+Route::post('members_view/fetch', 'MembersViewController@fetch')->name('membersview.fetch');
 
 
