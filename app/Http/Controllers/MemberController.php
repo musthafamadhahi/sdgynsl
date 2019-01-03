@@ -5,6 +5,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\User;
 use DB;
+use function Psy\sh;
 
 class MemberController extends Controller
 {
@@ -26,11 +27,30 @@ class MemberController extends Controller
     public function showall()
     {
         $district=Auth::User()->district;
-        $res = user::all()->where('district', $district)->first();
-
-
-
+        $res = DB::table('users')->where('district', $district)->get();
         return view('login.allmembers')->with('res', $res);
 
+    }
+    public function update()
+    {
+
+
+$i=0;
+        foreach ($_POST['changeRole']as $changeRole)
+        {
+            $email=$_POST['email'];
+
+            if($changeRole!='Choose Role'){
+            DB::table('users')
+                ->where('email', $email[$i])
+                ->update(['role' => $changeRole]);
+        }
+$i++;
+        }
+
+
+
+
+        return $this->showall();
     }
 }
