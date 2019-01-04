@@ -52,7 +52,79 @@
 </div>
 <!-- end topbar -->
 
-@if (Auth::user()->role =='Dc')
+@if (Auth::user()->role =='admin')
+    <header class="header">
+        <div class="container">
+            <div class="site-header clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-12 title-area">
+                    <div class="site-title" id="title">
+                        <a href="{{ url('/') }}" title="">
+                            <img src="logo.jpg">
+                        </a>
+                    </div>
+                </div>
+                <!-- title area -->
+
+                <div class="col-lg-9 col-md-12 col-sm-12">
+                    <div id="nav" class="right">
+                        <div class="container clearfix">
+                            <ul id="jetmenu" class="jetmenu blue">
+                                <li class="active"><a href="{{ url('/') }}">Home</a>
+                                </li>
+                                <li><a href="#">ABOUT US</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">PROJECTS</a></li>
+                                <li><a href="#">ACHIEVEMENTS</a></li>
+
+                                <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
+                                <li><a href="#">MEMBERS</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ url('/allmembers') }}">ALL MEMBERS</a></li>
+                                        <li><a href="blog-left-sidebar.html">RECENTLY JOINED</a></li>
+                                        <li><a href="blog-right-sidebar.html">MOST ACTIVE</a></li>
+                                        <li><a href="single-with-sidebar.html">SLEEPING MEMBERS</a></li>
+                                        <li><a href="blog-left-sidebar.html">DISTRICT COORINATORS</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <!-- Authentication Links -->
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- nav -->
+                </div>
+                <!-- title area -->
+            </div>
+            <!-- site header -->
+        </div>
+        <!-- end container -->
+    </header>
+
+
+@elseif (Auth::user()->role =='Dc')
     <header class="header">
         <div class="container">
             <div class="site-header clearfix">
