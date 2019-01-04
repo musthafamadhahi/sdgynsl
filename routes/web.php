@@ -19,7 +19,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/allmembers', 'MemberController@showall')->name('home');
+
 Route::post('/allmembers/update', 'MemberController@update')->name('home');
+
+Route::get('/members_view', 'MembersViewController@index');
+Route::post('members_view/fetch', 'MembersViewController@fetch')->name('membersview.fetch');
+
 
 Route::get('/uploadevents', 'EventController@uploadevents');
 Route::post('/upload', 'EventController@upload');
