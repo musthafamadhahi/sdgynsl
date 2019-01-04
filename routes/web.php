@@ -39,6 +39,6 @@ Route::post('/update', 'EventController@update');
 Route::get('/events', 'EventController@showall');
 
 
-Route::post('/message', 'MessageController@store');
+Route::post('/contact_us', 'MessageController@store');
 Route::get('/admin/view_messages', 'MessageController@index');
 
