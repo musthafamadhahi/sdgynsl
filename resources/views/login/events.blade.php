@@ -20,7 +20,7 @@
             <!-- end col-6 -->
 
         <div>
-            <ul>
+            <ul class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <li><p>Date : {{$e->date}}</p></li>
                 <li><p>Time : {{$e->time}}</p></li>
                 <li><p>Venue : {{$e->venue}}</p></li>
