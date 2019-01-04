@@ -77,7 +77,11 @@
                                     </ul>
                                 </li>
                                 <li><a href="#">PROJECTS</a></li>
-                                <li><a href="#">ACHIEVEMENTS</a></li>
+                                <li><a href="#">ACHIEVEMENTS</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">RATE</a></li>
+                                    </ul>
+                                </li>
 
                                 <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
                                 <li><a href="#">MEMBERS</a>
