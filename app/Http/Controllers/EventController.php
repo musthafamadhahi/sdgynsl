@@ -70,7 +70,7 @@ class EventController extends Controller
 
     public function updateevents()
     {
-        $events = $users = DB::table('events')->get();
+        $events = DB::table('events')->get();
         return view('login.updateevents')->with('events',$events);
     }
     public function update()
@@ -103,7 +103,13 @@ class EventController extends Controller
 
 
 
-        $events = $users = DB::table('events')->get();
+        $events = DB::table('events')->get();
         return view('login.updateevents')->with('events',$events);
+    }
+
+    public function showall()
+    {
+        $events = DB::table('events')->get();
+        return view('login.events')->with('events',$events);
     }
 }
