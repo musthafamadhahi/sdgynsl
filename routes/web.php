@@ -23,6 +23,6 @@ Route::post('/allmembers/update', 'MemberController@update')->name('home');
 
 Route::get('/uploadevents', 'EventController@uploadevents');
 Route::post('/upload', 'EventController@upload');
-Route::get('/updateevents', 'EventController@update');
-
+Route::get('/updateevents', 'EventController@updateevents');
+Route::post('/update', 'EventController@update');
 

@@ -4,12 +4,17 @@
 <div class="container">
     <h3>Update/Edit an event</h3>
     <br>
-    <form action="{{url('/upload')}}" method="post">
+    <form action="{{url('/update')}}" method="post">
         @csrf
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Title</label>
             <div class="col-sm-8">
-                <input type="text" name="title">
+                <select name="title" >
+                    <option selected>Choose event title</option>
+                    @foreach($events as $e)
+                        <option>{{$e->title}}</option>
+                        @endforeach
+                </select>
             </div>
         </div>
         <div class="form-group row">

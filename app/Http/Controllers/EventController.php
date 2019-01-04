@@ -59,9 +59,41 @@ class EventController extends Controller
         return view('login.uploadevents');
     }
 
+    public function updateevents()
+    {
+        $events = $users = DB::table('events')->get();
+        return view('login.updateevents')->with('events',$events);
+    }
     public function update()
     {
-        $events = App\Events::all();
-        return view('login.updateevents')->with('events',$events);
+        $event = \App\Events::where('title',$_POST['title']);
+        $attribute=['date','time','venue','description'];
+        foreach ($attribute as $a){
+            if($_POST[$a]==''){}
+                else{
+                    $event->$a = $_POST[$a];
+                }
+
+        }
+
+
+        if(isset($_POST['file'])){
+            $files=$_POST['file'];
+            foreach($files as $file){
+                $event->files =$file ;
+            }
+
+        }
+        if(isset($_POST['register'])){
+            $event->register ='yes';
+        }
+        else $event->register ='no' ;
+
+        $event->save();
+
+
+
+
+        return view('login.uploadevents');
     }
 }
