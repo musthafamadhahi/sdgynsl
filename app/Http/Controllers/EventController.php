@@ -5,7 +5,9 @@ use Auth;
 use DB;
 use App\Events;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use Schema;
 
 
 
@@ -39,15 +41,22 @@ class EventController extends Controller
         $event->time =$_POST['time'] ;
         $event->venue =$_POST['venue'] ;
         $event->description =$_POST['description'] ;
-        if(isset($_POST['file'])){
+        if(($_POST['file'])!=""){
             $files=$_POST['file'];
                 foreach($files as $file){
                     $event->files =$file ;
                 }
             $event->description =$_POST['description'] ;
         }
+        $name=$_POST['title'].$_POST['date'];
         if(isset($_POST['register'])){
             $event->register ='yes';
+            Schema::create($name, function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+                $table->string('email');
+
+            });
         }
         else $event->register ='no' ;
 
@@ -61,7 +70,7 @@ class EventController extends Controller
 
     public function updateevents()
     {
-        $events = $users = DB::table('events')->get();
+        $events = DB::table('events')->get();
         return view('login.updateevents')->with('events',$events);
     }
     public function update()
@@ -94,7 +103,13 @@ class EventController extends Controller
 
 
 
-        $events = $users = DB::table('events')->get();
+        $events = DB::table('events')->get();
         return view('login.updateevents')->with('events',$events);
+    }
+
+    public function showall()
+    {
+        $events = DB::table('events')->get();
+        return view('login.events')->with('events',$events);
     }
 }

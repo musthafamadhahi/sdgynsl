@@ -62,3 +62,5 @@
 @else
     <h3>No Members Yet</h3>
 @endif
+<br>
+@include('layouts.footer')
