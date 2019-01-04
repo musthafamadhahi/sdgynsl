@@ -21,9 +21,9 @@ Route::get('/contact_us', function () {
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/allmembers', 'MemberController@showall')->name('home');
-
 Route::post('/allmembers/update', 'MemberController@update')->name('home');
 
 Route::get('/members_view', 'MembersViewController@index');
