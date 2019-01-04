@@ -17,6 +17,8 @@ class MemberController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+
     }
 
     /**
@@ -26,6 +28,7 @@ class MemberController extends Controller
      */
     public function showall()
     {
+        
         $district=Auth::User()->district;
         $res = DB::table('users')->where('district', $district)->get();
         return view('login.allmembers')->with('res', $res);
@@ -47,5 +50,6 @@ $i=0;
         }
 $i++;
         }
+        return view('login.home');
     }
 }
