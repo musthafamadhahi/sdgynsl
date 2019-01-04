@@ -51,7 +51,8 @@
     <!-- end container -->
 </div>
 <!-- end topbar -->
-@if (Auth::user()->role =='dc')
+
+@if (Auth::user()->role =='Dc')
     <header class="header">
         <div class="container">
             <div class="site-header clearfix">
@@ -108,7 +109,7 @@
                                         </form>
                                     </div>
                                 </li>
-
+                                            </ul>
 
                         </div>
                     </div>
@@ -120,7 +121,76 @@
         </div>
         <!-- end container -->
     </header>
-@else
+    @elseif (Auth::user()->role =='Mc')
+        <header class="header">
+            <div class="container">
+                <div class="site-header clearfix">
+                    <div class="col-lg-3 col-md-3 col-sm-12 title-area">
+                        <div class="site-title" id="title">
+                            <a href="{{ url('/') }}" title="">
+                                <img src="logo.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- title area -->
+
+                    <div class="col-lg-9 col-md-12 col-sm-12">
+                        <div id="nav" class="right">
+                            <div class="container clearfix">
+                                <ul id="jetmenu" class="jetmenu blue">
+                                    <li class="active"><a href="{{ url('/') }}">Home</a>
+                                    </li>
+                                    <li><a href="#">ABOUT US</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">PROJECTS</a></li>
+                                    <li><a href="#">ACHIEVEMENTS</a></li>
+
+                                    <li><a href="#">CONTACT US</a></li>
+                                    <li><a href="#">EVENTS</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{ url('/uploadevents') }}">UPLOAD EVENTS</a></li>
+                                            <li><a href="{{ url('/updateevents') }}">UPDATE EVENTS</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                    <!-- Authentication Links -->
+
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+
+
+                            </div>
+                        </div>
+                        <!-- nav -->
+                    </div>
+                    <!-- title area -->
+                </div>
+                <!-- site header -->
+            </div>
+            <!-- end container -->
+        </header>
+
+    @else
+
 
 
     <header class="header">
@@ -143,63 +213,35 @@
                                 <li><a href="#">ABOUT US</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="team-members.html">Team Members</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-
-
                                     </ul>
                                 </li>
-                                <li><a href="#">OUR GOALS</a>
-                                    <ul class="dropdown">
-                                        <li><a href="digital-download.html">Products Page</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="account.html">Account Page</a></li>
-                                        <li><a href="support.html">Support Center</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">COMPETITION</a>
-                                    <ul class="dropdown">
-                                        <li><a href="single-portfolio-1.html">Single Portfolio 1</a></li>
-                                        <li><a href="single-portfolio-2.html">Single Portfolio 2</a></li>
-                                        <li><a href="portfolio-2.html">Portfolio (2 Columns)</a></li>
-                                        <li><a href="portfolio-3.html">Portfolio (3 Columns)</a></li>
-                                        <li><a href="gallery-portfolio.html">Gallery</a></li>
-                                        <li><a href="masonry-grid-portfolio.html">Masonry Grid Style</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="#">PROJECTS</a></li>
+                                <li><a href="#">ACHIEVEMENTS</a></li>
 
-                                <li><a href="#">CONTACT US</a>
-                                    <ul class="dropdown">
-                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="single-with-sidebar.html">Single with Sidebar</a></li>
-                                    </ul>
-                                </li>
-
+                                <li><a href="#">CONTACT US</a></li>
 
                                 <!-- Authentication Links -->
 
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                            @endguest
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
 
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endguest
+                            </ul>
                         </div>
                     </div>
                     <!-- nav -->
@@ -210,6 +252,7 @@
         </div>
         <!-- end container -->
     </header>
+
     <!-- end header -->
     <section id="intro">
         <div class="container">

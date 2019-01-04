@@ -47,10 +47,5 @@ $i=0;
         }
 $i++;
         }
-
-
-
-
-        return $this->showall();
     }
 }
