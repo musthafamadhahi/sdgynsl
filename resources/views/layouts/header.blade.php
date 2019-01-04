@@ -74,7 +74,7 @@
                             <li><a href="#">PROJECTS</a></li>
                             <li><a href="#">ACHIEVEMENTS</a></li>
 
-                            <li><a href="#">CONTACT US</a></li>
+                            <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
 
                             <!-- Authentication Links -->
                             @guest

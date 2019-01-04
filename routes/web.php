@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/contact_us', function () {
+    return view('/contact_us');
+});
+
 
 Auth::routes();
 
@@ -23,3 +27,5 @@ Route::get('/members_view', 'MembersViewController@index');
 Route::post('members_view/fetch', 'MembersViewController@fetch')->name('membersview.fetch');
 
 
+Route::post('/message', 'MsgController@store');
+Route::get('/admin/view_messages', 'MsgController@index');
