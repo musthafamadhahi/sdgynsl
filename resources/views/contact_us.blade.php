@@ -1,56 +1,78 @@
 @extends('layouts.header')
 
 @section('content')
-    <hr class="my-5">
 
-    <section id="contactUs">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Contact Us') }}</div>
 
-        <h2 class="mb-5 font-weight-bold text-center">Contact US</h2>
+                    <div class="card-body">
+                        <form method="POST" action="{{ url('/contact_us') }}">
+                            @csrf
 
-        {{-- <form class="p-5" method="POST" action="/message"> --}}
-        {!! Form::open(['url' => '/message', 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
-        <div class="md-form form-sm"> <i class="fa fa-user prefix grey-text"></i>
-            <input type="text" name="name" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('name') }}" required>
-            <label for="name">Name</label>
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
-            @if ($errors->has('name'))
-                <span class="invalid-feedback" role="alert">
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-            @endif
-        </div>
+                                    @endif
+                                </div>
+                            </div>
 
-        <div class="md-form form-sm"> <i class="fa fa-at prefix grey-text"></i>
-            <input type="email" name="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('email') }}" required>
-            <label for="email">Your Email</label>
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-            @if ($errors->has('email'))
-                <span class="invalid-feedback" role="alert">
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-            @endif
-        </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="message" class="col-md-4 col-form-label text-md-right">{{ __('Message') }}</label>
 
-        <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
-            <input type="text" name="message" id="message" class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }} form-control-sm" required>
-            <label for="msg">Message</label>
+                                <div class="col-md-6">
+                                    <input id="message" type="text" class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}" name="message" value="{{ old('message') }}" required>
 
-            @if ($errors->has('message'))
-                <span class="invalid-feedback" role="alert">
+                                    @if ($errors->has('message'))
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('message') }}</strong>
                                     </span>
-            @endif
+                                    @endif
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Submit') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
 
-        <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary">{{ __('Submit') }} <i class="fa fa-user-plus ml-1"></i></button>
-        </div>
-
-        <!-- Form contact -->
-        {!! Form::close() !!}
 
 
-    </section>
+
+
 
 @endsection
