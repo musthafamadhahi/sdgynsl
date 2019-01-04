@@ -12,7 +12,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ url('/') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -32,7 +32,7 @@
                             <label for="district" class="col-md-4 col-form-label text-md-right">{{ __('District') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('district') ? ' is-invalid' : '' }}" name="name" value="{{ old('district') }}" required autofocus>
+                                <input id="district" type="text" class="form-control{{ $errors->has('district') ? ' is-invalid' : '' }}" name="district" value="{{ old('district') }}" required autofocus>
 
                                 @if ($errors->has('district'))
                                     <span class="invalid-feedback" role="alert">
@@ -72,7 +72,7 @@
                             <label for="contact_no" class="col-md-4 col-form-label text-md-right">{{ __('Contact No') }}</label>
 
                             <div class="col-md-6">
-                                <input id="contact_no" type="email" class="form-control{{ $errors->has('contact_no') ? ' is-invalid' : '' }}" name="contact_no" value="{{ old('contact_no') }}" required>
+                                <input id="contact_no" type="number" class="form-control{{ $errors->has('contact_no') ? ' is-invalid' : '' }}" name="contact_no" value="{{ old('contact_no') }}" required>
 
                                 @if ($errors->has('contact_no'))
                                     <span class="invalid-feedback" role="alert">
