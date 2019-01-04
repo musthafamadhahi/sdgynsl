@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 use Auth;
 use DB;
-use Nexmo\Call\Event;
-use function Psy\sh;
 use App\Events;
+use Illuminate\Database\Eloquent\Model;
+
 
 
 
@@ -66,7 +66,7 @@ class EventController extends Controller
     }
     public function update()
     {
-        $event = \App\Events::where('title',$_POST['title']);
+        $event = \App\Events::where('title',$_POST['title'])->first();
         $attribute=['date','time','venue','description'];
         foreach ($attribute as $a){
             if($_POST[$a]==''){}
@@ -94,6 +94,7 @@ class EventController extends Controller
 
 
 
-        return view('login.uploadevents');
+        $events = $users = DB::table('events')->get();
+        return view('login.updateevents')->with('events',$events);
     }
 }

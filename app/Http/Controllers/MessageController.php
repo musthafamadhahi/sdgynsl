@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Msg;
 
-class MsgController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.

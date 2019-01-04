@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <div class="widget col-lg- col-md-3 col-sm-12">
+        <div class="widget col-lg-4 col-md-4 col-sm-12">
             <h4 class="title">About us</h4>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s..</p>
             <a class="button small" href="#">read more</a>
@@ -8,7 +8,7 @@
         <!-- end widget -->
 
         <!-- end widget -->
-        <div class="widget col-lg-3 col-md-3 col-sm-12">
+        <div class="widget col-lg-4 col-md-4 col-sm-12">
             <h4 class="title">Get In Touch</h4>
             <ul class="contact_details">
                 <li><i class="fa fa-envelope-o"></i> info@yoursite.com</li>
@@ -19,7 +19,7 @@
             <!-- contact_details -->
         </div>
         <!-- end widget -->
-        <div class="widget col-lg-3 col-md-3 col-sm-12">
+        <div class="widget col-lg-4 col-md-4 col-sm-12">
             <h4 class="title">Flickr Stream</h4>
             <ul class="flickr">
                 <li><a href="#"><img alt="" src="assets/img/flickr_01.jpg"></a></li>

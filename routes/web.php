@@ -21,7 +21,7 @@ Route::get('/contact_us', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/allmembers', 'MemberController@showall')->name('home');
 
 Route::post('/allmembers/update', 'MemberController@update')->name('home');
@@ -37,5 +37,5 @@ Route::get('/updateevents', 'EventController@updateevents');
 Route::post('/update', 'EventController@update');
 
 
-Route::post('/message', 'MsgController@store');
-Route::get('/admin/view_messages', 'MsgController@index');
+Route::post('/message', 'MessageController@store');
+Route::get('/admin/view_messages', 'MessageController@index');
