@@ -47,5 +47,6 @@ $i=0;
         }
 $i++;
         }
+        return view('login.home');
     }
 }
