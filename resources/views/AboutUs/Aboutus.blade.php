@@ -21,7 +21,7 @@
         <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
             <div class="general-title text-center">
                 <h3>ABOUT UN IN SRI LANKA</h3>
-                <p>Learn more about us</p>
+                
                 <hr>
             </div>
             <div class="divider"></div>
