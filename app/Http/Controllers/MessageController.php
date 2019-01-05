@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Msg;
+use App\Messages;
 
 class MessageController extends Controller
 {
@@ -46,13 +46,17 @@ class MessageController extends Controller
 
 
 
-        $msg = new Msg;
+        $messages = new Messages([
+            'name' => $request -> get('name'),
+            'email' => $request -> get('email'),
+            'message' => $request -> get('message')
+        ]);
 
-        $msg->name = $request -> input('name');
-        $msg->email = $request -> input('email');
-        $msg->message = $request -> input('message');
+        /*$messages->name = $request -> get('name');
+        $messages->email = $request -> get('email');
+        $messages->message = $request -> get('message');*/
 
-        $msg->save();
+        $messages->save();
 
         return view('contact_us');
     }

@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Contact Us') }}</div>
-
+                    <br>
                     <div class="card-body">
                         <form method="POST" action="{{ url('/contact_us') }}">
                             @csrf
