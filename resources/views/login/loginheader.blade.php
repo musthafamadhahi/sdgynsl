@@ -94,6 +94,8 @@
                                         <li><a href="{{ url('/add_dc') }}">ADD DC</a></li>
                                         <li><a href="{{ url('/view_dc') }}">SHOW DC</a></li>
                                         <li><a href="{{ url('/admin.view_message') }}">SHOW MESSAGES</a></li>
+                                        <li><a href="{{ url('/district') }}">Districts</a></li>
+                                        <li><a href="{{ url('/division') }}">Divisions</a></li>
                                     </ul>
                                 </li>
 
