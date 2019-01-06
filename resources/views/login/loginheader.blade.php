@@ -58,7 +58,7 @@
             <div class="site-header clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-12 title-area">
                     <div class="site-title" id="title">
-                        <a href="{{ url('/') }}" title="">
+                        <a href="{{ url('/home') }}" title="">
                             <img src="logo.jpg">
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                     <div id="nav" class="right">
                         <div class="container clearfix">
                             <ul id="jetmenu" class="jetmenu blue">
-                                <li class="active"><a href="{{ url('/') }}">Home</a>
+                                <li class="active"><a href="{{ url('/home') }}">Home</a>
                                 </li>
                                 <li><a href="#">ABOUT US</a>
                                     <ul class="dropdown">
