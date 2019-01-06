@@ -28,7 +28,7 @@ class MemberController extends Controller
      */
     public function showall()
     {
-        
+
         $district=Auth::User()->district;
         $res = DB::table('users')->where('district', $district)->get();
         return view('login.allmembers')->with('res', $res);

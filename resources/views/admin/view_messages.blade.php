@@ -1,6 +1,6 @@
 @extends('layouts.header')
-
-@section('content')
+<br>
+<body>
     <div class="col-md-8">
         {{-- <h2 class="cmntwlcmtxt">Welcome {{ Auth::user()->name }}</h2> --}}
     </div>
@@ -12,12 +12,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    @foreach($msg as $m)
+                    @foreach($message as $m)
                         <div class="card">
                             <div class="card-body">
                                 <h3>{{$m->name}}</h3>
                                 <small>{{$m->email}}</small><br><br>
-                                <p> {!! $m->msg !!}</p><br>
+                                <p> {!! $m->message !!}</p><br>
                                 <small>Recived on {!! $m->created_at !!}</small>
                             </div>
                         </div><br><br>
@@ -28,4 +28,4 @@
     @else
         <h3>No Messages Found</h3>
     @endif
-@endsection
+</body>

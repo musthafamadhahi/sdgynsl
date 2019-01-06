@@ -17,6 +17,12 @@ Route::get('/', function () {
 Route::get('/contact_us', function () {
     return view('/contact_us');
 });
+Route::get('/add_dc', function () {
+    return view('/add_dc');
+});
+Route::get('/admin/view_message', function () {
+    return view('/admin/view_message');
+});
 
 
 Route::get('/aboutUs', function () {
@@ -43,5 +49,8 @@ Route::post('/update', 'EventController@update');
 Route::get('/events', 'EventController@showall');
 
 
-Route::post('/message', 'MessageController@store');
-Route::get('/admin/view_messages', 'MessageController@index');
+Route::post('/contact_us', 'MessageController@store');
+Route::get('/admin/view_messages', 'MessageController@index')
+  
+Route::post('/add_dc', 'DcController@store');
+

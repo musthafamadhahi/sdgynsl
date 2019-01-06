@@ -22,6 +22,8 @@ class CreateEventsTable extends Migration
             $table->string('description');
             $table->string('register');
             $table->string('files')->nullable();
+            $table->integer('like')->default('0');
+            $table->integer('going')->default('0');
             $table->timestamps();
         });
 
