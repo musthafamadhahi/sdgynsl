@@ -25,6 +25,10 @@ Route::get('/admin/view_message', function () {
 });
 
 
+Route::get('/aboutUs', function () {
+    return view('AboutUs.aboutUs');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -46,7 +50,7 @@ Route::get('/events', 'EventController@showall');
 
 
 Route::post('/contact_us', 'MessageController@store');
-Route::get('/admin/view_messages', 'MessageController@index');
-
+Route::get('/admin/view_messages', 'MessageController@index')
+  
 Route::post('/add_dc', 'DcController@store');
 
