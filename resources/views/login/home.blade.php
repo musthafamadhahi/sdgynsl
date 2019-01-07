@@ -66,7 +66,7 @@
         <h3>Now streaming Live</h3>
         @foreach($live as $l)
             <p>{{$l->name}}</p>
-            <p>{{$l->link}}</p>
+            <a href="{{$l->link}}"> Watch live streaming</a>
             @endforeach
     </div>
 </section>
