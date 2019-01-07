@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             'district' => 'Undifiend',
             'division' => 'Undifiend',
             'contact_no' => '0777828357',
-            'email' => 'musthafamadhahi@gmail.com',
+            'email' => 'sdgynsl18@gmail.com',
             'role' => 'admin',
             'password' => bcrypt('admin'),
         ]);
