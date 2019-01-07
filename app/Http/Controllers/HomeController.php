@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index(){
 
-        $live=DB::table('livestreams')->where('status','Yes');
+        $live=DB::table('livestreams')->where('status','Yes')->get();
 
         return view('login.home')->with('live',$live);
     }
