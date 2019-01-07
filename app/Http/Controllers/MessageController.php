@@ -15,7 +15,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $msg = Msg::all();
+        $msg = Messages::all();
 
         return view('admin.view_messages')->with('msg', $msg);
     }

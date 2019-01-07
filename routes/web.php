@@ -26,6 +26,9 @@ Route::get('/admin/view_message', function () {
 Route::get('/livestream', function () {
     return view('/livestream');
 });
+Route::get('/aboutUs', function () {
+    return view('/aboutUs');
+});
 
 
 Auth::routes();
