@@ -23,6 +23,9 @@ Route::get('/add_dc', function () {
 Route::get('/admin/view_message', function () {
     return view('/admin/view_message');
 });
+Route::get('/livestream', function () {
+    return view('/livestream');
+});
 
 
 Auth::routes();
@@ -50,3 +53,4 @@ Route::get('/admin/view_messages', 'MessageController@index');
 
 Route::post('/add_dc', 'DcController@store');
 
+Route::post('/livestream', 'LiveStreamController@store');

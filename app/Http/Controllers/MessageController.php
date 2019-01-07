@@ -52,9 +52,6 @@ class MessageController extends Controller
             'message' => $request -> get('message')
         ]);
 
-        /*$messages->name = $request -> get('name');
-        $messages->email = $request -> get('email');
-        $messages->message = $request -> get('message');*/
 
         $messages->save();
 
