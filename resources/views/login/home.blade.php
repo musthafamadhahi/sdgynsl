@@ -61,7 +61,15 @@
     <!-- end container -->
 </section>
 <!-- end section -->
-
+<section>
+    <div class="container">
+        <h3>Now streaming Live</h3>
+        @foreach($live as $l)
+            <p>{{$l->name}}</p>
+            <p>{{$l->link}}</p>
+            @endforeach
+    </div>
+</section>
 <section class="section5">
     <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-12 columns">
