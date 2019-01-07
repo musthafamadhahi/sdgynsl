@@ -40,6 +40,10 @@ else if(Auth::User()->role=='Secretary') {
     $res = DB::table('users')->where('division', $division)->whereIn('role',['Member'])->get();
     return view('login.members')->with('res', $res);
 }
+else if(Auth::User()->role=='admin') {
+    $res = DB::table('users')->whereIn('role',['Member','Secretary','Mc'])->orderBy('district')->orderBy('division')->orderBy('role')->get();
+    return view('members_view')->with('res', $res);
+}
 else
     return view('/home');
     }
