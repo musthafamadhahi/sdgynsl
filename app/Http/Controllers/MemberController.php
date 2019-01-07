@@ -59,6 +59,8 @@ class MemberController extends Controller
 
 
 
-        return view('login.home');
+        $live=DB::table('livestreams')->where('status','Yes')->get();
+
+        return view('login.home')->with('live',$live);
     }
 }

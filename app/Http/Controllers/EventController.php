@@ -62,8 +62,8 @@ class EventController extends Controller
 
         $event->save();
 
-    Mail::send(['text'=>'login/changeroleMail'],['name',Auth::User()->name],function ($messege){
-        $res = DB::table('users');
+    Mail::send(['text'=>'login/newEventMail'],['name',Auth::User()->name],function ($messege){
+        $res = DB::table('users')->get();
         foreach ($res as $r){
         $messege->to($r->email)->subject("Event Upload");
         $messege->from('sdgynsl18@gmail.com');
