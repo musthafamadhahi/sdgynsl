@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class ReplyController extends Controller
 {
+    public function index()
+    {
+        $rep = DB::table('replies')->orderBy('id','DESC')->get();
+
+        return view('view_messages')->with('rep', $rep);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

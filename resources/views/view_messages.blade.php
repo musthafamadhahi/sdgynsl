@@ -50,7 +50,7 @@
                                 <small>{{$m->email}}</small>
                                 <p> {!! $m->message !!}</p>
                                 <small>Posted on {!! $m->created_at !!}</small><br><br>
-                                @foreach()
+
                                 <form action="{{url('/view_message')}}" method="post">
                                     @csrf
                                     <div class="form-group row">

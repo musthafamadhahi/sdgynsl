@@ -18,7 +18,9 @@ class MessageController extends Controller
     {
         $msg = DB::table('messages')->orderBy('id','DESC')->get();
 
-        return view('view_messages')->with('msg', $msg);
+        $rep = DB::table('replies')->orderBy('id','DESC')->get();
+
+        return view('view_messages')->with('msg', $msg)->with('rep', $rep);
     }
 
     /**
