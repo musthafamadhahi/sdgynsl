@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class livestreams extends Model
+class livestream extends Model
 {
     protected $fillable = ['name', 'link', 'email', 'status'];
 }
