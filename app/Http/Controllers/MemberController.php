@@ -29,10 +29,16 @@ class MemberController extends Controller
      */
     public function showall()
     {
+if(Auth::User()->role=='Dc'){
+    $district=Auth::User()->district;
+    $res = DB::table('users')->where('district', $district)->groupBy('division')->get();
+    return view('login.allmembers')->with('res', $res);
 
-        $district=Auth::User()->district;
-        $res = DB::table('users')->where('district', $district)->get();
-        return view('login.allmembers')->with('res', $res);
+}
+else
+    $division=Auth::User()->division;
+        $res = DB::table('users')->where('division', $division)->get();
+        return view('login.members')->with('res', $res);
 
     }
     public function update()
@@ -62,5 +68,13 @@ class MemberController extends Controller
         $live=DB::table('livestreams')->where('status','Yes')->get();
 
         return view('login.home')->with('live',$live);
+    }
+    public function delete(){
+        foreach ($_POST['delete'] as $delete ){
+            if($delete=='yes'){
+                DB::table('users')->where('email', $_POST['email'])->delete();
+            }
+        }
+
     }
 }

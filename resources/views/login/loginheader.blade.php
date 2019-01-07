@@ -249,7 +249,7 @@
                                 <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
                                 <li><a href="#">OPTIONS</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('/allmembers') }}">ALL MEMBERS</a></li>
+                                        <li><a href="{{ url('/members') }}">ALL MEMBERS</a></li>
                                     </ul>
                                 </li>
 
