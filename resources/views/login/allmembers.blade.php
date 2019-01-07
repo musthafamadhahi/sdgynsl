@@ -55,7 +55,7 @@
     @endif
     @endforeach
 
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><input type="submit"name="change" ></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td><input type="submit"name="change" ></td></tr>
     </tbody>
 
         </div>

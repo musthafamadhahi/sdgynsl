@@ -39,7 +39,7 @@ class DcController extends Controller
 
     public function showall()
     {
-        $res = DB::table('users')->where('role', 'Dc')->get();
+        $res = DB::table('users')->where('role', 'Dc')->orderBy('district')->get();
         return view('view_dc')->with('res', $res);
 
     }

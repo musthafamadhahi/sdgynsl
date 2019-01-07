@@ -13,10 +13,10 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
                 <th scope="col">District</th>
+                <th scope="col">Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Contact No</th>
                 <th scope="col" >Delete</th>
             </tr>
             </thead>
@@ -30,10 +30,10 @@
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <th scope="row">{{$r->id}}</th>
-                                        <td>{{$r->name}}</td>
                                         <td>{{$r->district}}</td>
+                                        <td>{{$r->name}}</td>
                                         <td><input type="email"name="email[]"value="{{$r->email}}" hidden>{{$r->email}}</td>
+                                        <td>{{$r->contact_no}}</td>
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-sm-8">
@@ -48,7 +48,7 @@
                         @endif
                         @endforeach
 
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><input type="submit"name="update" ></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td><input type="submit"name="update" ></td></tr>
                         </tbody>
 
                 </div>
@@ -59,7 +59,7 @@
 
 
 @else
-    <h3>No Members Yet</h3>
+    <h3>No District Coordinators enrolled at the moment</h3>
 @endif
 <br>
 @include('layouts.footer')
