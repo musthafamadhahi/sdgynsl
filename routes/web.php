@@ -37,6 +37,7 @@ Route::get('/updateevents', 'EventController@updateevents');
 Route::post('/update', 'EventController@update');
 
 Route::get('/events', 'EventController@showall');
+Route::post('/event/{id}/like', 'EventController@like');
 
 
 Route::post('/contact_us', 'MessageController@store');

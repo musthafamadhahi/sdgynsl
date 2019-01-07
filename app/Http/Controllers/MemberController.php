@@ -5,6 +5,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\User;
 use DB;
+use Mail;
 use function Psy\sh;
 
 class MemberController extends Controller
@@ -38,18 +39,26 @@ class MemberController extends Controller
     {
 
 
-$i=0;
-        foreach ($_POST['changeRole']as $changeRole)
-        {
-            $email=$_POST['email'];
 
-            if($changeRole!='Choose Role'){
-            DB::table('users')
-                ->where('email', $email[$i])
-                ->update(['role' => $changeRole]);
-        }
-$i++;
-        }
+            Mail::send(['text'=>'login/changeroleMail'],['name',Auth::User()->name],function ($messege){
+                $i=0;
+                foreach ($_POST['changeRole']as $changeRole)
+                {
+
+
+                    if($changeRole!='Choose Role') {
+                        $email = $_POST['email'];
+                        $x = $email[$i];
+                        DB::table('users')
+                            ->where('email', $email[$i])
+                            ->update(['role' => $changeRole]);
+                        $messege->to($x)->subject("Role Chaneges");
+                        $messege->from('sdgynsl18@gmail.com');
+                    } }$i++;
+                });
+
+
+
         return view('login.home');
     }
 }
