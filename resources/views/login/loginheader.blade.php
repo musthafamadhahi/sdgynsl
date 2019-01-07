@@ -90,7 +90,7 @@
 
                                 <li><a href="{{ url('/contact_us') }}">CONTACT US</a>
                                     <ul class="dropdown">
-                                        <li><a href="/admin/view_messages">SHOW MESSAGES</a></li>
+                                        <li><a href="/view_messages">SHOW MESSAGES</a></li>
                                     </ul>
                                 </li>
 
