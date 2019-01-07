@@ -1,6 +1,12 @@
 @include('login.loginheader')
 
     <br>
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+<br>
 <div class="container">
     <form action="{{ url('/allmembers/update') }}" method="post">
         {{ csrf_field() }}
