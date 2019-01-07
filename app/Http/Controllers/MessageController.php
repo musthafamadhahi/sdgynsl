@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Messages;
+use DB;
 
 class MessageController extends Controller
 {
@@ -15,7 +16,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $msg = Messages::all();
+        $msg = DB::table('messages')->orderBy('id','DESC')->get();
 
         return view('view_messages')->with('msg', $msg);
     }
