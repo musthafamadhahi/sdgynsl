@@ -175,7 +175,11 @@
                                                 </li>
                                                 <li><a href="#">ACHIEVEMENTS</a></li>
 
-                                                <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
+                                                <li><a href="{{ url('/contact_us') }}">CONTACT US</a>
+                                                    <ul class="dropdown">
+                                                        <li><a href="/view_messages">SHOW MESSAGES</a></li>
+                                                    </ul>
+                                                </li>
                                 <li><a href="#">OPTIONS</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('/allmembers') }}">ALL MEMBERS</a></li>
@@ -250,7 +254,11 @@
                                 </li>
                                 <li><a href="#">ACHIEVEMENTS</a></li>
 
-                                <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
+                                <li><a href="{{ url('/contact_us') }}">CONTACT US</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/view_messages">SHOW MESSAGES</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">OPTIONS</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('/members') }}">ALL MEMBERS</a></li>
@@ -323,7 +331,11 @@
                                     </li>
                                     <li><a href="#">ACHIEVEMENTS</a></li>
 
-                                    <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
+                                    <li><a href="{{ url('/contact_us') }}">CONTACT US</a>
+                                        <ul class="dropdown">
+                                            <li><a href="/view_messages">SHOW MESSAGES</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#">OPTIONS</a>
                                         <ul class="dropdown">
                                             <li><a href="{{ url('/uploadevents') }}">UPLOAD EVENTS</a></li>
@@ -399,7 +411,11 @@
                                 </li>
                                 <li><a href="#">ACHIEVEMENTS</a></li>
 
-                                <li><a href="{{ url('/contact_us') }}">CONTACT US</a></li>
+                                <li><a href="{{ url('/contact_us') }}">CONTACT US</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/view_messages">SHOW MESSAGES</a></li>
+                                    </ul>
+                                </li>
                                 <!-- Authentication Links -->
 
 

@@ -18,7 +18,7 @@
                                 <h3>{{$m->name}}</h3>
                                 <small>{{$m->email}}</small>
                                 <p> {!! $m->message !!}</p>
-                                <small>Recived on {!! $m->created_at !!}</small><br><br>
+                                <small>Posted on {!! $m->created_at !!}</small><br><br>
                                 <form action="{{url('/view_message')}}" method="post">
                                     @csrf
                                     <div class="form-group row">
@@ -29,7 +29,7 @@
                                     <div class="form-group row">
                                         <div></div>
                                         <div class="col-sm-8">
-                                            <input type="submit" name="Reply">
+                                            <input type="submit" name="submit">
                                         </div>
                                     </div>
                                 </form>
