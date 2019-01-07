@@ -347,3 +347,21 @@
             </div>
         </div>
     </section>
+    <!-- JavaScript Libraries -->
+    <script src="assets/lib/jquery/jquery.min.js"></script>
+    <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/lib/php-mail-form/validate.js"></script>
+    <script src="assets/lib/prettyphoto/js/prettyphoto.js"></script>
+    <script src="assets/lib/isotope/isotope.min.js"></script>
+    <script src="assets/lib/hover/hoverdir.js"></script>
+    <script src="assets/lib/hover/hoverex.min.js"></script>
+    <script src="assets/lib/unveil-effects/unveil-effects.js"></script>
+    <script src="assets/lib/owl-carousel/owl-carousel.js"></script>
+    <script src="assets/lib/jetmenu/jetmenu.js"></script>
+    <script src="assets/lib/animate-enhanced/animate-enhanced.min.js"></script>
+    <script src="assets/lib/jigowatt/jigowatt.js"></script>
+    <script src="assets/lib/easypiechart/easypiechart.min.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="assets/js/main.js"></script>
+</body>

@@ -49,7 +49,6 @@
         <label class="col-sm-4 col-form-label" >Attachments(If any available)</label>
         <div class="col-sm-8">
             <input type="file" name=file[] multiple="multiple" >
-            <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
         </div>
         </div>
     </div>
