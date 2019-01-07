@@ -17,7 +17,7 @@ class MessageController extends Controller
     {
         $msg = Messages::all();
 
-        return view('admin.view_messages')->with('msg', $msg);
+        return view('view_messages')->with('msg', $msg);
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use DB;
 
 class DcController extends Controller
 {
@@ -34,6 +35,26 @@ class DcController extends Controller
         $user->save();
 
         return view('add_dc');
+    }
+
+    public function showall()
+    {
+        $res = DB::table('users')->where('role', 'Dc')->orderBy('district')->get();
+        return view('view_dc')->with('res', $res);
+
+    }
+
+    public function delete(){
+        $i=0;
+        foreach ($_POST['delete'] as $delete ){
+            $email=$_POST['email'];
+            if($delete=='yes'){
+                DB::table('users')->where('email', $email[$i])->delete();
+            }
+            $i++;
+        }
+        return redirect()->back()->with('message', 'Deleted  Successfully!');
+
     }
 
 }

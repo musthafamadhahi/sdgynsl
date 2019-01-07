@@ -31,15 +31,21 @@ class MemberController extends Controller
     {
 if(Auth::User()->role=='Dc'){
     $district=Auth::User()->district;
-    $res = DB::table('users')->where('district', $district)->get();
+    $res = DB::table('users')->where('district', $district)->orderBy('division')->orderBy('role')->get();
     return view('login.allmembers')->with('res', $res);
 
 }
+else if(Auth::User()->role=='Secretary') {
+    $division = Auth::User()->division;
+    $res = DB::table('users')->where('division', $division)->whereIn('role',['Member'])->get();
+    return view('login.members')->with('res', $res);
+}
+else if(Auth::User()->role=='admin') {
+    $res = DB::table('users')->whereIn('role',['Member','Secretary','Mc'])->orderBy('district')->orderBy('division')->orderBy('role')->get();
+    return view('members_view')->with('res', $res);
+}
 else
-    $division=Auth::User()->division;
-        $res = DB::table('users')->where('division', $division)->get();
-        return view('login.members')->with('res', $res);
-
+    return view('/home');
     }
     public function update()
     {

@@ -20,14 +20,17 @@ Route::get('/contact_us', function () {
 Route::get('/add_dc', function () {
     return view('/add_dc');
 });
-Route::get('/admin/view_message', function () {
-    return view('/admin/view_message');
+Route::get('/view_message', function () {
+    return view('/view_message');
 });
 Route::get('/livestream', function () {
     return view('/livestream');
 });
 Route::get('/aboutUs', function () {
     return view('/aboutUs');
+});
+Route::get('/view_dc', function () {
+    return view('/view_dc');
 });
 
 
@@ -55,8 +58,10 @@ Route::post('/likeEvent', 'EventController@likeEvent')->name('like');
 
 
 Route::post('/contact_us', 'MessageController@store');
-Route::get('/admin/view_messages', 'MessageController@index');
+Route::get('/view_messages', 'MessageController@index');
 
 Route::post('/add_dc', 'DcController@store');
+Route::get('/view_dc', 'DcController@showall');
+Route::post('/dc/delete', 'MemberController@delete')->name('home');
 
 Route::post('/livestream', 'LiveStreamController@store');
