@@ -63,6 +63,6 @@ Route::post('/view_messages', 'ReplyController@store');
 
 Route::post('/add_dc', 'DcController@store');
 Route::get('/view_dc', 'DcController@showall');
-Route::post('/dc/delete', 'MemberController@delete')->name('home');
+Route::post('/dc/delete', 'DcController@delete')->name('home');
 
 Route::post('/livestream', 'LiveStreamController@store');
