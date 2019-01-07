@@ -31,7 +31,7 @@ class MemberController extends Controller
     {
 if(Auth::User()->role=='Dc'){
     $district=Auth::User()->district;
-    $res = DB::table('users')->where('district', $district)->groupBy('division')->get();
+    $res = DB::table('users')->where('district', $district)->get();
     return view('login.allmembers')->with('res', $res);
 
 }
@@ -58,23 +58,26 @@ else
                         DB::table('users')
                             ->where('email', $email[$i])
                             ->update(['role' => $changeRole]);
-                        $messege->to($x)->subject("Role Chaneges");
+                        $messege->to($x)->subject("Role Changes");
                         $messege->from('sdgynsl18@gmail.com');
-                    } }$i++;
+                    } $i++;}
                 });
 
 
 
-        $live=DB::table('livestreams')->where('status','Yes')->get();
 
-        return view('login.home')->with('live',$live);
+          return redirect()->back()->with('message', 'Updated Successfully!');
     }
     public function delete(){
+        $i=0;
         foreach ($_POST['delete'] as $delete ){
+            $email=$_POST['email'];
             if($delete=='yes'){
-                DB::table('users')->where('email', $_POST['email'])->delete();
+                DB::table('users')->where('email', $email[$i])->delete();
             }
+            $i++;
         }
+        return redirect()->back()->with('message', 'Deleted  Successfully!');
 
     }
 }

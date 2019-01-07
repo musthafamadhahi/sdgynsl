@@ -38,7 +38,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/allmembers', 'MemberController@showall')->name('home');
 Route::post('/allmembers/update', 'MemberController@update')->name('home');
 Route::get('/members', 'MemberController@showall')->name('home');
-Route::get('/members/delete', 'MemberController@delete')->name('home');
+Route::post('/members/delete', 'MemberController@delete')->name('home');
 
 Route::get('/members_view', 'MembersViewController@index');
 Route::post('members_view/fetch', 'MembersViewController@fetch')->name('membersview.fetch');

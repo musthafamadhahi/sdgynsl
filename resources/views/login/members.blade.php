@@ -1,6 +1,12 @@
 @include('login.loginheader')
 
 <br>
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+<br>
 <div class="container">
     <form action="{{ url('/members/delete') }}" method="post">
         {{ csrf_field() }}
@@ -21,7 +27,7 @@
                 <div class="row justify-content-center">
                     @foreach($res as $r)
                         <tbody>
-                        @if($r->role=='Dc')
+                        @if($r->role=='Secretary')
                         @else
                             <tr>
 
@@ -36,7 +42,7 @@
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-sm-8">
-                                                    <input type="checkbox" name=delete value="yes">
+                                                    <input type="checkbox" name=delete[] value="yes">
                                                 </div>
                                             </div>
                                         </td>
@@ -47,7 +53,7 @@
                         @endif
                         @endforeach
 
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><input type="submit"name="delete" ></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><input type="submit"name="update" ></td></tr>
                         </tbody>
 
                 </div>
