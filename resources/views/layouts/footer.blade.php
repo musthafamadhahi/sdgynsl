@@ -19,20 +19,7 @@
             <!-- contact_details -->
         </div>
         <!-- end widget -->
-        <div class="widget col-lg-4 col-md-4 col-sm-12">
-            <h4 class="title">Flickr Stream</h4>
-            <ul class="flickr">
-                <li><a href="#"><img alt="" src="assets/img/flickr_01.jpg"></a></li>
-                <li><a href="#"><img alt="" src="assets/img/flickr_02.jpg"></a></li>
-                <li><a href="#"><img alt="" src="assets/img/flickr_03.jpg"></a></li>
-                <li><a href="#"><img alt="" src="assets/img/flickr_04.jpg"></a></li>
-                <li><a href="#"><img alt="" src="assets/img/flickr_05.jpg"></a></li>
-                <li><a href="#"><img alt="" src="assets/img/flickr_06.jpg"></a></li>
-                <li><a href="#"><img alt="" src="assets/img/flickr_07.jpg"></a></li>
-                <li><a href="#"><img alt="" src="assets/img/flickr_08.jpg"></a></li>
-            </ul>
-        </div>
-        <!-- end widget -->
+        
     </div>
     <!-- end container -->
 </footer>

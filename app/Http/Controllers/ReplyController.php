@@ -32,6 +32,6 @@ class ReplyController extends Controller
 
         $replies->save();
 
-        return view('view_message');
+        return redirect()->back();
     }
 }

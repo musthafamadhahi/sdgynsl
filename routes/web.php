@@ -59,7 +59,7 @@ Route::post('/likeEvent', 'EventController@likeEvent')->name('like');
 
 Route::post('/contact_us', 'MessageController@store');
 Route::get('/view_messages', 'MessageController@index');
-Route::post('/view_messages', 'ReplyController@store');
+Route::post('/view_messages', 'MessageController@show');
 
 Route::post('/add_dc', 'DcController@store');
 Route::get('/view_dc', 'DcController@showall');

@@ -54,24 +54,6 @@
                                 <form action="{{url('/view_message')}}" method="post">
                                     @csrf
                                     <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Messade id</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" name="message" value="{{$m->id}}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Email</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" name="email" value="{{Auth::user()->email}}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Reply</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" name="reply" placeholder="Reply here">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
                                         <div></div>
                                         <div class="col-sm-8">
                                             <input type="submit" name="submit">
