@@ -14,6 +14,7 @@ class LiveStreamController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'link' => 'required',
+            'email' => 'required|email',
             'status' => 'required'
         ]);
 
