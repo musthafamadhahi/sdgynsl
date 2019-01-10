@@ -34,7 +34,7 @@ class EventController extends Controller
     {
         return view('login.uploadevents');
     }
-    public function upload()
+    public function upload(Request $request)
     {
         $event = new Events;
 
@@ -43,11 +43,13 @@ class EventController extends Controller
         $event->time =$_POST['time'] ;
         $event->venue =$_POST['venue'] ;
         $event->description =$_POST['description'] ;
-        if($_POST['file']!=""){
-            $files=$_POST['file'];
-                foreach($files as $file){
-                    $event->files =$file ;
-                }
+        if($request->hasFile('file')){
+            foreach ($request->file as $file){
+                $filename=$file->getClientOriginalName();
+                $event->files =$filename ;
+                $file->storeAs('public/Event',$filename);
+            }
+
             $event->description =$_POST['description'] ;
         }
         $name=$_POST['title'].$_POST['date'];
@@ -82,26 +84,34 @@ class EventController extends Controller
         $events = DB::table('events')->get();
         return view('login.updateevents')->with('events',$events);
     }
-    public function update()
+    public function update(Request $request)
     {
-        $event = \App\Events::where('title',$_POST['title'])->first();
+        $title = $request->get('title');
+        $event = \App\Events::where('title',$title)->first();
         $attribute=['date','time','venue','description'];
         foreach ($attribute as $a){
-            if($_POST[$a]==''){}
+            if($request->$a==''){}
                 else{
-                    $event->$a = $_POST[$a];
+                    $event->$a = $request->$a;
                 }
 
         }
 
+//if($request->hasFile('file')){
 
-        if(isset($_POST['file'])){
-            $files=$_POST['file'];
-            foreach($files as $file){
-                $event->files =$file ;
-            }
+    foreach ($request->file as $file){
 
-        }
+        $filename=$file->getClientOriginalName();
+        $event->files =$filename ;
+
+       $file->storeAs('public/Event',$filename);
+    }
+
+
+//}
+
+
+
         if(isset($_POST['register'])){
             $event->register ='yes';
         }
@@ -161,6 +171,15 @@ class EventController extends Controller
         $res = \App\Events::where('title', $title)->first();
 
         return view('login.viewevents')->with('res', $res);
+
+    }
+    public function delete(Request $request)
+    {
+        $title = $request->get('title');
+
+        \App\Events::where('title', $title)->delete();
+
+        return redirect()->back()->with('message', 'Deleted  Successfully!');
 
     }
 }
