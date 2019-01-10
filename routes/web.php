@@ -35,6 +35,18 @@ Route::get('/view_dc', function () {
 Route::get('/view_livestream', function () {
     return view('/view_livestream');
 });
+Route::get('/district', function () {
+    return view('/district');
+});
+Route::get('/view_district', function () {
+    return view('/view_district');
+});
+Route::get('/division', function () {
+    return view('/division');
+});
+Route::get('/view_division', function () {
+    return view('/view_division');
+});
 
 
 Auth::routes();
@@ -71,6 +83,13 @@ Route::get('/view_dc', 'DcController@showall');
 Route::post('/dc/delete', 'DcController@delete')->name('home');
 
 Route::post('/livestream', 'LiveStreamController@store');
-//Route::get('/livestream', 'LiveStreamController@store');
 Route::get('/view_livestream', 'LiveStreamController@show')->name('home');
 Route::post('/view_livestream/update', 'LiveStreamController@update')->name('home');
+
+Route::post('/district', 'DistrictController@store');
+Route::get('/view_district', 'DistrictController@show')->name('home');
+Route::post('/view_district/delete', 'DistrictController@delete')->name('home');
+
+Route::post('/division', 'DivisionController@store');
+Route::get('/view_division', 'DivisionController@show')->name('home');
+Route::post('/view_division/delete', 'DivisionController@delete')->name('home');

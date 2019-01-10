@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('login.loginheader')
 <br>
 <div class="container">
     <h3>Start a new live streaming</h3>

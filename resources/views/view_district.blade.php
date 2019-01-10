@@ -8,15 +8,13 @@
 @endif
 <br>
 <div class="container">
-    <form action="{{ url('/dc/delete') }}" method="post">
+    <form action="{{ url('/view_district/delete') }}" method="post">
         {{ csrf_field() }}
         <table class="table">
             <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">District</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Contact No</th>
                 <th scope="col" >Delete</th>
             </tr>
             </thead>
@@ -25,19 +23,16 @@
                 <div class="row justify-content-center">
                     @foreach($res as $r)
                         <tbody>
-                        @if($r->role=='Dc')
                             <tr>
 
                                 <div class="card">
                                     <div class="card-body">
+                                        <th scope="row"><input type="number"name="id[]"value="{{$r->id}}" hidden>{{$r->id}}</th>
                                         <td>{{$r->district}}</td>
-                                        <td>{{$r->name}}</td>
-                                        <td><input type="email"name="email[]"value="{{$r->email}}" hidden>{{$r->email}}</td>
-                                        <td>{{$r->contact_no}}</td>
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-sm-8">
-                                                    <input type="checkbox" name=delete[] value="{{$r->email}}">
+                                                    <input type="checkbox" name=delete[] value="{{$r->id}}">
                                                 </div>
                                             </div>
                                         </td>
@@ -45,7 +40,6 @@
                                     </div>
                                 </div>
                             </tr>
-                        @endif
                         @endforeach
 
                         <tr><td></td><td></td><td></td><td></td><td><input type="submit"name="delete" ></td></tr>
@@ -59,7 +53,7 @@
 
 
 @else
-    <h3>No District Coordinators enrolled at the moment</h3>
+    <h3>No District at the moment</h3>
 @endif
 <br>
 @include('layouts.footer')
