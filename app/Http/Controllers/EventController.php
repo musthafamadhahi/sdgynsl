@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use DB;
 use App\Events;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
@@ -151,5 +152,13 @@ class EventController extends Controller
             $like->save();
         }
         return null;
+    }
+    public function view(Request $request){
+$title= $request -> get('title');
+
+        $res=\App\Events::where('title',$title)->first();
+
+        return view('login.viewevents')->with('res',$res);
+
     }
 }

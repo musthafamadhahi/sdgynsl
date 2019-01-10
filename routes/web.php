@@ -52,6 +52,8 @@ Route::get('/uploadevents', 'EventController@uploadevents');
 Route::post('/upload', 'EventController@upload');
 Route::get('/updateevents', 'EventController@updateevents');
 Route::post('/update', 'EventController@update');
+Route::post('/view', 'EventController@view');
+
 
 Route::get('/events', 'EventController@showall');
 Route::post('/likeEvent', 'EventController@likeEvent')->name('like');

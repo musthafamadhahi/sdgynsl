@@ -97,8 +97,8 @@
                                 <li><a href="#">Options</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('/allmembers') }}">ALL MEMBERS</a></li>
-                                        <li><a href="blog-left-sidebar.html">RECENTLY JOINED</a></li>
-                                        <li><a href="blog-right-sidebar.html">MOST ACTIVE</a></li>
+                                        <li><a href="{{ url('/uploadevents') }}">UPLOAD EVENTS</a></li>
+                                        <li><a href="{{ url('/updateevents') }}">UPDATE EVENTS</a></li>
                                         <li><a href="single-with-sidebar.html">SLEEPING MEMBERS</a></li>
                                         <li><a href="{{ url('/add_dc') }}">ADD DC</a></li>
                                         <li><a href="{{ url('/view_dc') }}">SHOW DC</a></li>
