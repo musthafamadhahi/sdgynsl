@@ -271,12 +271,12 @@
         <h3>Update/Edit an event</h3>
         <br>
 
-            <form action="{{url('/update')}}" method="post">
+            <form action="{{url('/update')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Title</label>
                     <div class="col-sm-4">
-                        <input type="text" value="{{$res->title}}">
+                        <input type="text" value="{{$res->title}}" name="title">
                     </div>
 
                     <div class="col-sm-4">

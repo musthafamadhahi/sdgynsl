@@ -4,7 +4,7 @@
 <div class="container">
     <h3>Register a new event</h3>
     <br>
-<form action="{{url('/upload')}}" method="post">
+<form action="{{url('/upload')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group row">
         <label class="col-sm-4 col-form-label">Title</label>
