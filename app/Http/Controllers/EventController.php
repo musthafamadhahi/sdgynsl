@@ -153,12 +153,14 @@ class EventController extends Controller
         }
         return null;
     }
-    public function view(Request $request){
-$title= $request -> get('title');
 
-        $res=\App\Events::where('title',$title)->first();
+    public function view(Request $request)
+    {
+        $title = $request->get('title');
 
-        return view('login.viewevents')->with('res',$res);
+        $res = \App\Events::where('title', $title)->first();
+
+        return view('login.viewevents')->with('res', $res);
 
     }
 }

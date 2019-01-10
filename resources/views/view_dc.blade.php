@@ -37,7 +37,7 @@
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-sm-8">
-                                                    <input type="checkbox" name=delete[] value="yes">
+                                                    <input type="checkbox" name=delete[] value="{{$r->email}}">
                                                 </div>
                                             </div>
                                         </td>

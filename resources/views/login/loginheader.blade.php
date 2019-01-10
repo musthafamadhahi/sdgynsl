@@ -104,6 +104,7 @@
                                         <li><a href="{{ url('/view_dc') }}">SHOW DC</a></li>
                                         <li><a href="{{ url('/admin.view_message') }}">SHOW MESSAGES</a></li>
                                         <li><a href="{{ url('/livestream') }}">LIVE STREAMING</a></li>
+                                        <li><a href="{{ url('/view_livestream') }}">EDIT STREAMING</a></li>
                                         <li><a href="{{ url('/district') }}">Districts</a></li>
                                         <li><a href="{{ url('/division') }}">Divisions</a></li>
                                     </ul>
@@ -341,6 +342,7 @@
                                             <li><a href="{{ url('/uploadevents') }}">UPLOAD EVENTS</a></li>
                                             <li><a href="{{ url('/updateevents') }}">UPDATE EVENTS</a></li>
                                             <li><a href="{{ url('/livestream') }}">LIVE STREAMING</a></li>
+                                            <li><a href="{{ url('/view_livestream') }}">EDIT STREAMING</a></li>
                                         </ul>
                                     </li>
 

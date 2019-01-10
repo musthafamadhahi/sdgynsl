@@ -275,13 +275,19 @@
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Title</label>
             <div class="col-sm-4">
+
                 <select name="title" id="title">
                     <option   selected>Choose event title</option>
+
+                <select name="title" >
+                    <option selected>Choose event title</option>
+
                     @foreach($events as $e)
                         <option>{{$e->title}}</option>
                         @endforeach
                 </select>
             </div>
+
             <div class="col-sm-2">
                 <button type="submit" name="view" formaction="{{url('/view')}}">View</button>
             </div>
@@ -289,7 +295,12 @@
                 <button type="submit" name="delete" formaction="{{url('/delete')}}">Delete</button>
             </div>
 
+            <div class="col-sm-4">
+                <button type="submit" name="view" formaction="{{url('/view')}}}">View</button>
+            </div>
+
         </div>
+
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Date</label>
             <div class="col-sm-8">

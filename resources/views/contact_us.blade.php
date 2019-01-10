@@ -71,6 +71,7 @@
         </div>
     </div>
     </body>
+    @include('layouts.footer')
 
 @else
 @include('login.loginheader')
@@ -133,4 +134,5 @@
     </div>
     </div>
 </body>
+@include('layouts.footer')
 @endguest

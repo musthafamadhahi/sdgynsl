@@ -45,14 +45,10 @@ class DcController extends Controller
     }
 
     public function delete(){
-        $i=0;
-        foreach ($_POST['delete'] as $delete ){
-            $email=$_POST['email'];
-            if($delete=='yes'){
-                DB::table('users')->where('email', $email[$i])->delete();
-            }
-            $i++;
+        foreach ($_POST['delete'] as $delete){
+            DB::table('users')->where('email', $delete)->delete();
         }
+
         return redirect()->back()->with('message', 'Deleted  Successfully!');
 
     }
