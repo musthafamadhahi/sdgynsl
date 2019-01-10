@@ -274,7 +274,7 @@
         @csrf
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Title</label>
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                 <select name="title" >
                     <option selected>Choose event title</option>
                     @foreach($events as $e)
@@ -282,7 +282,11 @@
                         @endforeach
                 </select>
             </div>
+            <div class="col-sm-4">
+                <button type="submit" name="view" formaction="{{url('/view')}}}">View</button>
+            </div>
         </div>
+
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Date</label>
             <div class="col-sm-8">

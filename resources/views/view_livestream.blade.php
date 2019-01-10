@@ -13,7 +13,7 @@
         <table class="table">
             <thead>
             <tr>
-
+                <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Link</th>
                 <th scope="col">Status</th>
@@ -28,14 +28,13 @@
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <th scope="row">{{$r->id}}</th>
+                                        <th scope="row"><input type="number"name="id[]"value="{{$r->id}}" hidden>{{$r->id}}</th>
                                         <td>{{$r->name}}</td>
                                         <td>{{$r->link}}</td>
                                         <td>{{$r->status}}</td>
-                                        <td>{{$r->role}}</td>
                                         <td>
                                             <div >
-                                                <select name="changeRole[]" class="form-control">
+                                                <select name="changeStatus[]" class="form-control">
                                                     <option selected>Choose Status</option>
                                                     <option>Yes</option>
                                                     <option>No</option>
@@ -45,10 +44,9 @@
                                     </div>
                                 </div>
                             </tr>
-                        @endif
                         @endforeach
 
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td><input type="submit"name="change" ></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td><input type="submit"name="change" ></td></tr>
                         </tbody>
 
                 </div>
@@ -59,7 +57,7 @@
 
 
 @else
-    <h3>No Members Yet</h3>
+    <h3>No Stremings Currently</h3>
 @endif
 <br>
 @include('layouts.footer')

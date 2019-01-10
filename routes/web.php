@@ -32,6 +32,9 @@ Route::get('/aboutUs', function () {
 Route::get('/view_dc', function () {
     return view('/view_dc');
 });
+Route::get('/view_livestream', function () {
+    return view('/view_livestream');
+});
 
 
 Auth::routes();
@@ -52,6 +55,7 @@ Route::get('/uploadevents', 'EventController@uploadevents');
 Route::post('/upload', 'EventController@upload');
 Route::get('/updateevents', 'EventController@updateevents');
 Route::post('/update', 'EventController@update');
+Route::post('/view', 'EventController@view');
 
 Route::get('/events', 'EventController@showall');
 Route::post('/likeEvent', 'EventController@likeEvent')->name('like');
@@ -66,3 +70,6 @@ Route::get('/view_dc', 'DcController@showall');
 Route::post('/dc/delete', 'DcController@delete')->name('home');
 
 Route::post('/livestream', 'LiveStreamController@store');
+//Route::get('/livestream', 'LiveStreamController@store');
+Route::get('/view_livestream', 'LiveStreamController@show')->name('home');
+Route::post('/view_livestream/update', 'LiveStreamController@update')->name('home');

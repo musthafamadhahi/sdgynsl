@@ -51,15 +51,7 @@
                                 <p> {!! $m->message !!}</p>
                                 <small>Posted on {!! $m->created_at !!}</small><br><br>
 
-                                <form action="{{url('/view_message')}}" method="post">
-                                    @csrf
-                                    <div class="form-group row">
-                                        <div></div>
-                                        <div class="col-sm-8">
-                                            <input type="submit" name="submit">
-                                        </div>
-                                    </div>
-                                </form>
+
                             </div>
                         </div><br><br><br>
                     @endforeach

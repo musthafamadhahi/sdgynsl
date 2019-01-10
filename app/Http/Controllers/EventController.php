@@ -152,4 +152,7 @@ class EventController extends Controller
         }
         return null;
     }
+    public function view(){
+
+    }
 }

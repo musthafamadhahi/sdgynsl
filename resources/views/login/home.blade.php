@@ -9,8 +9,7 @@
             <h3>Now streaming Live</h3>
             @foreach($live as $l)
                 <p>{{$l->name}}</p>
-                <a href="{{$l->link}}"> Watch live streaming</a>
-                <a><iframe src="{{$l->link}}" frameborder="0" allowfullscreen></iframe></a>
+                <iframe src="{{$l->link}}" frameborder="0" allowfullscreen></iframe>
                 <br>
                 <br>
             @endforeach
