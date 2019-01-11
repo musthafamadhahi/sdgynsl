@@ -491,10 +491,7 @@
             </div>
             <div class="divider"></div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="he-wrap tpl2">
-                    <img src="img/office.png" alt="" class="img-responsive">
 
-                </div>
             </div>
             <!-- he wrap -->
         </div>
@@ -511,8 +508,9 @@
             </div>
             @if($e->files!=null)
 
+
             <div>
-                <img src="/images/{{ $e->files }}">
+                <img src="storage/Event/{{$file}}">
             </div>
 
             @endif

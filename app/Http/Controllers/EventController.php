@@ -97,7 +97,7 @@ class EventController extends Controller
 
         }
 
-//if($request->hasFile('file')){
+if($request->hasFile('file')){
 
     foreach ($request->file as $file){
 
@@ -108,7 +108,7 @@ class EventController extends Controller
     }
 
 
-//}
+}
 
 
 
