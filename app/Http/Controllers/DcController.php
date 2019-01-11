@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use DB;
 
@@ -14,7 +15,7 @@ class DcController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'district' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:users',
             'contact_no' => 'required',
             'password' => 'required'
         ]);
@@ -28,7 +29,7 @@ class DcController extends Controller
             'email' => $request -> get('email'),
             'contact_no' => $request -> get('contact_no'),
             'role' => $request -> get('role'),
-            'password' => $request -> get('password')
+            'password' =>Hash::make($request -> get('password'))
         ]);
 
 
