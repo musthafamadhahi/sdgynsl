@@ -11,6 +11,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Schema;
 use Mail;
+use App\livestream;
 
 
 class EventController extends Controller
@@ -36,6 +37,12 @@ class EventController extends Controller
     }
     public function upload(Request $request)
     {
+        $events = DB::table('events')->get();
+        foreach ($events as $e){
+            if($e->title==$request->title){
+
+            }
+        }
         $event = new Events;
 
         $event->title =$_POST['title'] ;
@@ -76,6 +83,19 @@ class EventController extends Controller
 
 
 
+    //live Stream link adding
+        $livestream = new Livestream([
+            'name' => $request -> get('title'),
+            'link' => $request -> get('livestream'),
+            'email' => Auth::user()->email,
+            'status' => 'yes'
+        ]);
+
+
+        $livestream->save();
+
+
+
         return view('login.uploadevents');
     }
 
@@ -102,7 +122,7 @@ if($request->hasFile('file')){
     foreach ($request->file as $file){
 
         $filename=$file->getClientOriginalName();
-        $event->files =$filename ;
+        $event->files =$filename;
 
        $file->storeAs('public/Event',$filename);
     }
@@ -128,40 +148,19 @@ if($request->hasFile('file')){
 
     public function showall()
     {
-        $events = DB::table('events')->get();
-        return view('login.events')->with('events',$events);
+
+        $events = DB::table('events')->orderBy('date','desc')->get();
+foreach ($events as $e){
+    $live=DB::table('livestreams')->where('name',$e->title)->first();
+    if($live){
+        $events['link']=$live->link;
     }
-    public function likeEvent(Request $request){
-        $event_id=$request['eventId'];
-        $is_like=$request['isLike']==='true';
-        $update=false;
-        $event= Events::find($event_id);
 
-        if(!$event){
-            return null;
-        }
-        $user =Auth::user();
-        $like=$user->likes()->where('event_id',$event_id)->first();
-        if($like){
-            $already_like=$like->like;
-            $update=true;
-            if($already_like==$is_like){
-                $like->delete();
-                return null;
-            }
-        }else{
-            $like=new Like();
-        }
-        $like->like=$is_like;
-        $like->user_id=$user->id;
-        $like->event_id=$event->id;
+    else {$events['link']=" ";}
 
-        if($update){
-            $like->update();
-        }else {
-            $like->save();
-        }
-        return null;
+}
+
+        return view('login.events')->with('events',$events);
     }
 
     public function view(Request $request)

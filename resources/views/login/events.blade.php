@@ -510,33 +510,22 @@
 
 
             <div>
-                <img src="storage/Event/{{$file}}">
+                <img src="storage/Event/{{$e->files}}">
             </div>
 
             @endif
-            <div >
-                <a href="#" class="like" >
-                    {{Auth::user()->likes()->where('event_id',$e->id)->first()? Auth::user()->likes()->where('event_id',$e->id)->first()->like==1? 'You have liked this post':'Like' : 'Like'}}
-                </a>
-                <a href="#" class="like" >
-                    {{Auth::user()->likes()->where('event_id',$e->id)->first()? Auth::user()->likes()->where('event_id',$e->id)->first()->like==0? 'You dont like this post':'Dislike' : 'Dislike'}}
-                </a>
-            </div>
+
         </div>
 
             <!-- end col-6 -->
         </div>
 
-    </div>
+
     <!-- end container -->
 </section>
 @endforeach
     @include('layouts.footer')
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{{asset('/js/like.js')}}" ></script>
-<script type="text/javascript">
-    var token='{{Session::token()}}';
-    var urlLike='{{route('like')}}'
-</script>
+
+
 

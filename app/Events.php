@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Events extends Model
 {
     protected $fillable = [
-        'title', 'date', 'time','venue','description','register','files','likes','going'
+        'title', 'date', 'time','venue','description','register','files',
     ];
     public function user(){
         return $this->belongsTo('App\User');

@@ -39,6 +39,13 @@
 
     </div>
     <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Live Stream Link</label>
+        <div class="col-sm-8">
+            <textarea  name="livestream" rows="10"></textarea>
+        </div>
+
+    </div>
+    <div class="form-group row">
         <label class="col-sm-4 col-form-label" >Member Registration</label>
         <div class="col-sm-8">
             <input type="checkbox" name=register value="yes">
