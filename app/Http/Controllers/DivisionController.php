@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class DivisionController extends Controller
 {
@@ -16,7 +17,8 @@ class DivisionController extends Controller
 
 
         $division = new Division([
-            'division' => $request -> get('division')
+            'division' => $request -> get('division'),
+            'district' => $request -> get('district')
         ]);
 
 

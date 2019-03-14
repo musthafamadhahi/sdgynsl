@@ -54,5 +54,45 @@ class DcController extends Controller
 
     }
 
+    public function updatedc()
+    {
+        $dc = DB::table('users')->where('role','Dc')->get();
+        return view('update_dc')->with('dc',$dc);
+    }
+
+
+
+    public function search(Request $request)
+    {
+        $email = $request->get('email');
+
+        $res = \App\User::where('email', $email)->first();
+
+        return view('search_dc')->with('res', $res);
+
+    }
+
+    public function update(Request $request)
+    {
+        $email = $request->get('email');
+        $dc = \App\User::where('email',$email)->first();
+        $attribute=['name','contact_no'];
+        foreach ($attribute as $a){
+            if($request->$a==''){}
+            else{
+                $dc->$a = $request->$a;
+            }
+
+        }
+
+        $dc->save();
+
+
+
+
+        $dc = DB::table('users')->where('role','Dc')->get();
+        return view('update_dc')->with('dc',$dc);
+    }
+
 }
 

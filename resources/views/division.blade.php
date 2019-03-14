@@ -1,7 +1,7 @@
 @include('login.loginheader')
 <br>
 <div class="container">
-    <h3>View & Modify Divisions</h3>
+    <h3>Add new Divisions</h3>
     <br>
     <form action="{{url('/division')}}" method="post">
         @csrf

@@ -47,7 +47,12 @@ Route::get('/division', function () {
 Route::get('/view_division', function () {
     return view('/view_division');
 });
-
+Route::get('/update_dc', function () {
+    return view('/update_dc');
+});
+Route::get('/search_dc', function () {
+    return view('/search_dc');
+});
 
 Auth::routes();
 
@@ -81,6 +86,10 @@ Route::post('/view_messages', 'MessageController@show');
 Route::post('/add_dc', 'DcController@store');
 Route::get('/view_dc', 'DcController@showall');
 Route::post('/dc/delete', 'DcController@delete')->name('home');
+Route::get('/update_dc', 'DcController@updatedc');
+Route::post('/search', 'DcController@search');
+Route::post('/dc/update', 'DcController@update');
+
 
 Route::post('/livestream', 'LiveStreamController@store');
 Route::get('/view_livestream', 'LiveStreamController@show')->name('home');
